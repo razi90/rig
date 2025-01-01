@@ -26,7 +26,9 @@ thiserror = "1.0.61"
 rig-derive = { version = "0.1.0", path = "./rig-core-derive", optional = true }
 glob = "0.3.1"
 lopdf = { version = "0.34.0", optional = true }
-rayon = { version = "1.10.0", optional = true}
+rayon = { version = "1.10.0", optional = true }
+epub = { version = "2.1.2" }
+
 
 [dev-dependencies]
 anyhow = "1.0.75"
@@ -36,10 +38,11 @@ tracing-subscriber = "0.3.18"
 tokio-test = "0.4.4"
 
 [features]
-all = ["derive", "pdf", "rayon"]
+all = ["derive", "pdf", "rayon", "epub"]
 derive = ["dep:rig-derive"]
 pdf = ["dep:lopdf"]
 rayon = ["dep:rayon"]
+epub = []
 
 [[test]]
 name = "embed_macro"
@@ -47,20 +50,20 @@ required-features = ["derive"]
 
 [[example]]
 name = "rag"
-required-features = ["derive"] 
+required-features = ["derive"]
 
 [[example]]
 name = "vector_search"
-required-features = ["derive"] 
+required-features = ["derive"]
 
 [[example]]
 name = "vector_search_cohere"
-required-features = ["derive"] 
+required-features = ["derive"]
 
 [[example]]
 name = "gemini_embeddings"
-required-features = ["derive"] 
+required-features = ["derive"]
 
 [[example]]
 name = "xai_embeddings"
-required-features = ["derive"] 
+required-features = ["derive"]

@@ -36,6 +36,7 @@ impl Loadable for PathBuf {
         Ok((self, contents?))
     }
 }
+
 impl<T: Loadable> Loadable for Result<T, PdfLoaderError> {
     fn load(self) -> Result<Document, PdfLoaderError> {
         self.map(|t| t.load())?
@@ -61,7 +62,7 @@ impl<T: Loadable> Loadable for Result<T, PdfLoaderError> {
 /// # Example Usage
 ///
 /// ```rust
-/// use rig:loaders::PdfileLoader;
+/// use rig:loaders::PdfFileLoader;
 ///
 /// fn main() -> Result<(), Box<dyn std::error::Error>> {
 ///     // Create a FileLoader using a glob pattern

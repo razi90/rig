@@ -19,3 +19,9 @@ pub mod pdf;
 
 #[cfg(feature = "pdf")]
 pub use pdf::PdfFileLoader;
+
+// #[cfg(feature = "epub")]
+pub mod epub;
+
+// #[cfg(feature = "epub")]
+pub use epub::EpubFileLoader;
